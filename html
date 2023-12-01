@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spacebar Click Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    #counter {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Spacebar Click Counter</h1>
+  
+  <div id="counter">0</div>
+  <p>Click the spacebar to increase the count!</p>
+
+  <script>
+    let clickCount = 0;
+
+    document.body.addEventListener('keydown', function(event) {
+      if (event.code === 'Space') {
+        clickCount++;
+        updateCounter();
+      }
+    });
+
+    function updateCounter() {
+      document.getElementById('counter').textContent = clickCount;
+    }
+  </script>
+
+</body>
+</html>
